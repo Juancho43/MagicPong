@@ -1,7 +1,13 @@
+class_name Item
 extends Node
 
+var target
+var effect = {
+	"speed": 0,
+	"horizontal" : false
+}
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	$".".position = calculatePosition()
 	spawnSound()
@@ -9,6 +15,9 @@ func _ready() -> void:
 
 func spawnSound():
 	$SpawnSound.play()
+	print(target)
+	print(effect.speed)
+	print(effect.horizontal)
 	
 	await  get_tree().create_timer(1,5).timeout
 	$SpawnSound.queue_free()

@@ -1,14 +1,13 @@
 extends Area2D
 
-func spawn(item):
-	var item_preload = load(item) 
-	var item_to_load = item_preload.instantiate()
-	add_child(item_to_load)
+var powerUp
+	
 
 func _on_timer_timeout() -> void:
-	print("asasdasd")
-	if(condition()):
-		spawn("res://Components/Items/Item/Item.tscn")
+	#if(condition()):
+	if(true):
+		add_child($ItemFactory.buildItem())
+		
 	
 func condition():
 	var number = randi() % 99 + 1
