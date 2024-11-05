@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://cj1kvs4uocscv"]
+
+[ext_resource type="PackedScene" uid="uid://cinnliea2yhvt" path="res://Components/Walls/Walls.tscn" id="1_7eyv5"]
+[ext_resource type="Texture2D" uid="uid://brjtnqi8fcr81" path="res://Components/Levels/Assets/background.jpg" id="1_ihwwi"]
+[ext_resource type="PackedScene" uid="uid://ci7cid42px6fg" path="res://Components/Player/PlayerManager/PlayerManager.tscn" id="2_652ax"]
+[ext_resource type="AudioStream" uid="uid://cj4tnewpi0rer" path="res://Components/Levels/Assets/OutThere.ogg" id="3_iwxr7"]
+[ext_resource type="PackedScene" uid="uid://b2pyc6hbkqb5e" path="res://Components/Ball/Ball.tscn" id="4_my1g7"]
+[ext_resource type="PackedScene" uid="uid://chmj62kll5iyw" path="res://Components/Items/ItemManager/ItemManager.tscn" id="6_ow1qb"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_iwxr7")
+autoplay = true
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(973, 553)
+scale = Vector2(0.534722, 0.534722)
+texture = ExtResource("1_ihwwi")
+
+[node name="Walls" parent="." instance=ExtResource("1_7eyv5")]
+
+[node name="PlayerManager" parent="." instance=ExtResource("2_652ax")]
+
+[node name="Ball" parent="." instance=ExtResource("4_my1g7")]
+position = Vector2(963, 538)
+
+[node name="ItemManager" parent="." instance=ExtResource("6_ow1qb")]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://chmj62kll5iyw"]
+
+[ext_resource type="Script" path="res://Components/Items/ItemManager/item_manager.gd" id="1_w0esa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipt8v"]
+size = Vector2(1860, 1010)
+
+[node name="ItemManager" type="Area2D"]
+script = ExtResource("1_w0esa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(964, 539)
+shape = SubResource("RectangleShape2D_ipt8v")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

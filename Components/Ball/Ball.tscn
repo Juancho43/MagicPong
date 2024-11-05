@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2pyc6hbkqb5e"]
+
+[ext_resource type="Texture2D" uid="uid://ddg3t4qaobgjy" path="res://Components/Ball/Assets/ball.png" id="1_do22b"]
+[ext_resource type="Script" path="res://Components/Ball/ball.gd" id="1_j4suf"]
+[ext_resource type="AudioStream" uid="uid://b1y0bqf2ee2aj" path="res://Components/Ball/Assets/bounce.wav" id="3_j04ar"]
+[ext_resource type="AudioStream" uid="uid://ci7rp3rbqxmq3" path="res://Components/Ball/Assets/score.wav" id="4_s7wac"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hqf1w"]
+radius = 25.7
+
+[node name="Ball" type="CharacterBody2D"]
+script = ExtResource("1_j4suf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_hqf1w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, 1)
+scale = Vector2(0.102339, 0.102339)
+texture = ExtResource("1_do22b")
+
+[node name="bounce" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_j04ar")
+
+[node name="score" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_s7wac")
