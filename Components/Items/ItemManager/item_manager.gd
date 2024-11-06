@@ -4,8 +4,7 @@ var powerUp
 	
 
 func _on_timer_timeout() -> void:
-	#if(condition()):
-	if(true):
+	if(condition()):
 		add_child($ItemFactory.buildItem())
 		
 	

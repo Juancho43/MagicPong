@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://ci7cid42px6fg"]
+[gd_scene load_steps=4 format=3 uid="uid://ci7cid42px6fg"]
 
+[ext_resource type="Script" path="res://Components/Player/PlayerManager/PlayerManager.gd" id="1_663ar"]
 [ext_resource type="PackedScene" uid="uid://44fk0wrbtfi7" path="res://Components/Player/Player.tscn" id="1_ke40u"]
 [ext_resource type="Script" path="res://Components/Player/Player2.gd" id="2_sagig"]
 
 [node name="PlayerManager" type="Node2D"]
+script = ExtResource("1_663ar")
 
 [node name="Player2" parent="." instance=ExtResource("1_ke40u")]
 position = Vector2(1880, 540)

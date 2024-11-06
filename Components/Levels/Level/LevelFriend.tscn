@@ -1,13 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://cj1kvs4uocscv"]
+[gd_scene load_steps=8 format=3 uid="uid://cj1kvs4uocscv"]
 
 [ext_resource type="PackedScene" uid="uid://cinnliea2yhvt" path="res://Components/Walls/Walls.tscn" id="1_7eyv5"]
 [ext_resource type="Texture2D" uid="uid://brjtnqi8fcr81" path="res://Components/Levels/Assets/background.jpg" id="1_ihwwi"]
+[ext_resource type="Script" path="res://Components/Levels/Level/LevelFriend.gd" id="1_lday6"]
 [ext_resource type="PackedScene" uid="uid://ci7cid42px6fg" path="res://Components/Player/PlayerManager/PlayerManager.tscn" id="2_652ax"]
 [ext_resource type="AudioStream" uid="uid://cj4tnewpi0rer" path="res://Components/Levels/Assets/OutThere.ogg" id="3_iwxr7"]
 [ext_resource type="PackedScene" uid="uid://b2pyc6hbkqb5e" path="res://Components/Ball/Ball.tscn" id="4_my1g7"]
 [ext_resource type="PackedScene" uid="uid://chmj62kll5iyw" path="res://Components/Items/ItemManager/ItemManager.tscn" id="6_ow1qb"]
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_lday6")
 
 [node name="Musica" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_iwxr7")
