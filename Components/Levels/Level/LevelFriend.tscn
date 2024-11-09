@@ -28,3 +28,4 @@ texture = ExtResource("1_ihwwi")
 position = Vector2(963, 538)
 
 [node name="ItemManager" parent="." instance=ExtResource("6_ow1qb")]
+position = Vector2(2, 0)

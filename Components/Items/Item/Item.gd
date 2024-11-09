@@ -1,5 +1,5 @@
 class_name Item
-extends Node
+extends Area2D
 
 
 var target
@@ -11,7 +11,7 @@ var effect = {
 
 func _ready() -> void:
 	add_to_group("items")
-	$".".position = calculatePosition()
+	position = calculatePosition()
 	spawnSound()
 
 
@@ -39,5 +39,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
 		$DestroySound.play()
 		await get_tree().create_timer(1,5).timeout
+		EventManager.emit_signal("itemDestroy",self)
 		emit_signal("item_destroyed",target, effect)
 		queue_free()

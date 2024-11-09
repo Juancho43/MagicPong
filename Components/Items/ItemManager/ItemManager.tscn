@@ -4,13 +4,13 @@
 [ext_resource type="Script" path="res://Components/Items/ItemManager/ItemFactory/item_factory.gd" id="2_q0630"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipt8v"]
-size = Vector2(1860, 1010)
+size = Vector2(1771, 1010)
 
 [node name="ItemManager" type="Area2D"]
 script = ExtResource("1_w0esa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(964, 539)
+position = Vector2(962.5, 539)
 shape = SubResource("RectangleShape2D_ipt8v")
 
 [node name="Timer" type="Timer" parent="."]

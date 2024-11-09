@@ -11,7 +11,7 @@ size = Vector2(1927, 50)
 [node name="RightWall" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
-position = Vector2(1942, 553)
+position = Vector2(1960, 555)
 shape = SubResource("RectangleShape2D_vwo0f")
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
