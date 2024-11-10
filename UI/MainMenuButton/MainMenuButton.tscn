@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbls3km4lj1je"]
+
+[ext_resource type="Script" path="res://UI/MainMenuButton/main_menu_button.gd" id="1_hkli8"]
+[ext_resource type="FontFile" uid="uid://dumwlquk1a56x" path="res://UI/Menu/Assets/Gameplay.ttf" id="2_fkgu7"]
+
+[node name="Button" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("2_fkgu7")
+text = "Go to Main Menu"
+script = ExtResource("1_hkli8")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

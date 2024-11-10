@@ -1,14 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://bcwh1igin5581"]
+[gd_scene load_steps=12 format=3 uid="uid://bcwh1igin5581"]
 
 [ext_resource type="Script" path="res://Components/Levels/Scripts/Level.gd" id="1_emjjl"]
 [ext_resource type="Texture2D" uid="uid://brjtnqi8fcr81" path="res://Components/Levels/Assets/background.jpg" id="2_1f6gc"]
 [ext_resource type="PackedScene" uid="uid://bhul0i4npvfmw" path="res://UI/Score/Score.tscn" id="3_rdcks"]
-[ext_resource type="AudioStream" uid="uid://cj4tnewpi0rer" path="res://Components/Levels/Assets/OutThere.ogg" id="4_bxiqu"]
+[ext_resource type="AudioStream" uid="uid://d37vtsmt1ttcy" path="res://Components/Levels/Assets/battle.mp3" id="4_21cpn"]
+[ext_resource type="AudioStream" uid="uid://cpjrwowdtqk0f" path="res://Components/Levels/Assets/Jeremy Blake - Powerup!.mp3" id="4_cgs8r"]
 [ext_resource type="PackedScene" uid="uid://cinnliea2yhvt" path="res://Components/Walls/Walls.tscn" id="5_0u8t7"]
 [ext_resource type="PackedScene" uid="uid://ci7cid42px6fg" path="res://Components/Player/PlayerManager/PlayerManager.tscn" id="6_uikkj"]
 [ext_resource type="PackedScene" uid="uid://b2pyc6hbkqb5e" path="res://Components/Ball/Ball.tscn" id="7_j53ja"]
 [ext_resource type="PackedScene" uid="uid://chmj62kll5iyw" path="res://Components/Items/ItemManager/ItemManager.tscn" id="8_c3tdw"]
 [ext_resource type="PackedScene" uid="uid://iwm418hon7rw" path="res://UI/PauseMenu/PauseMenu.tscn" id="9_e8egp"]
+[ext_resource type="PackedScene" uid="uid://ckn27mv8fudlr" path="res://UI/WinnerScreen/WinnerScreen.tscn" id="10_18jmk"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_emjjl")
@@ -29,8 +31,13 @@ offset_bottom = 59.0
 grow_horizontal = 1
 grow_vertical = 1
 
+[node name="BattleMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_21cpn")
+volume_db = -16.693
+
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_bxiqu")
+stream = ExtResource("4_cgs8r")
+volume_db = 6.302
 autoplay = true
 
 [node name="Walls" parent="." instance=ExtResource("5_0u8t7")]
@@ -43,8 +50,37 @@ position = Vector2(963, 538)
 [node name="ItemManager" parent="." instance=ExtResource("8_c3tdw")]
 position = Vector2(2, 0)
 
-[node name="PauseMenu" parent="." instance=ExtResource("9_e8egp")]
-offset_left = 962.0
-offset_top = 384.0
-offset_right = 962.0
-offset_bottom = 384.0
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 1951.0
+offset_bottom = 1104.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WinnerScreen" parent="Control" instance=ExtResource("10_18jmk")]
+visible = false
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 27.0
+offset_top = 36.0
+offset_right = 1973.0
+offset_bottom = 1132.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="PauseMenu" parent="Control" instance=ExtResource("9_e8egp")]
+visible = false
+layout_mode = 1
+offset_left = 8.0
+offset_top = 25.5
+offset_right = 8.0
+offset_bottom = 25.5

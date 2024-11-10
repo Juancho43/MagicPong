@@ -1,5 +1,8 @@
 extends Control
 
+func _ready() -> void:
+	get_tree().paused = false
+
 func _on_level_pressed() -> void:
 	GameConfig.oponent = "IA"
 	_go_to_play()

@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dr3qg8n80rbh5"]
+[gd_scene load_steps=6 format=3 uid="uid://ckn27mv8fudlr"]
 
 [ext_resource type="Script" path="res://UI/WinnerScreen/winner_screen.gd" id="1_hoqhb"]
+[ext_resource type="FontFile" uid="uid://dumwlquk1a56x" path="res://UI/Menu/Assets/Gameplay.ttf" id="2_1cdfx"]
+[ext_resource type="PackedScene" uid="uid://cbls3km4lj1je" path="res://UI/MainMenuButton/MainMenuButton.tscn" id="2_js3ho"]
+[ext_resource type="Texture2D" uid="uid://v7s75b5ksdlg" path="res://UI/WinnerScreen/Assets/Winner.jpeg" id="2_lahen"]
+[ext_resource type="AudioStream" uid="uid://x10ctbcfkdx4" path="res://UI/WinnerScreen/Assets/victory.mp3" id="5_wh75l"]
 
 [node name="WinnerScreen" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -15,17 +20,39 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hoqhb")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(979.938, 550.25)
+scale = Vector2(1.13735, 1.13428)
+texture = ExtResource("2_lahen")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -323.5
-offset_top = -147.5
-offset_right = 323.5
-offset_bottom = 147.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.158472, 0.158472, 0.158472, 1)
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.760888, 0.363577, 0.88631, 1)
+theme_override_colors/font_outline_color = Color(0.196005, 0.442699, 1, 1)
+theme_override_fonts/font = ExtResource("2_1cdfx")
+theme_override_font_sizes/font_size = 50
+text = "...GANADOR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" parent="VBoxContainer" instance=ExtResource("2_js3ho")]
+layout_mode = 2
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_wh75l")
+autoplay = true

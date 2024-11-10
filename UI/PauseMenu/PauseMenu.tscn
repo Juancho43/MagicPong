@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://iwm418hon7rw"]
+[gd_scene load_steps=5 format=3 uid="uid://iwm418hon7rw"]
 
 [ext_resource type="Script" path="res://UI/PauseMenu/pause_menu.gd" id="1_jcsfy"]
+[ext_resource type="PackedScene" uid="uid://cbls3km4lj1je" path="res://UI/MainMenuButton/MainMenuButton.tscn" id="2_hp8e7"]
+[ext_resource type="Texture2D" uid="uid://cq5lv7ce8qtsr" path="res://UI/PauseMenu/Assets/PauseMenu.jpeg" id="2_nvmkb"]
+[ext_resource type="AudioStream" uid="uid://cj4tnewpi0rer" path="res://UI/PauseMenu/Assets/OutThere.ogg" id="4_8r8ua"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -14,6 +16,11 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jcsfy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-2.625, -1.50001)
+scale = Vector2(1.09668, 1.09668)
+texture = ExtResource("2_nvmkb")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -30,12 +37,13 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Pause Menu"
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="MainMenuButton" parent="VBoxContainer" instance=ExtResource("2_hp8e7")]
 layout_mode = 2
-text = "Go to Main Menu"
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[node name="PauseMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_8r8ua")
