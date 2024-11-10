@@ -6,20 +6,37 @@ extends Node2D
 @onready var Oponent = $PlayerManager/Player
 @onready var PlayerScore = $Score/PlayerPoints
 @onready var OponentScore = $Score/OponentPoints
+var winner
+
 var points = { 
 	"Player" : 0,
 	"Oponent" : 0
 }
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	EventManager.connect("score",	Callable(self, "onScore"))
-	pass # Replace with function body.
+	
+
 	
 func onScore(wall):
 	setPoints(wall)
 	resetGame()
+	isGameOver()
 
+func isGameOver():
+	
+	isWinner("Player")
+	isWinner("Oponent")
+	
+		
+func isWinner(player):	
+	var flag = false
+	if points.player >= GameConfig.pointsToWin:
+		flag = true
+	return flag
+	
 
+	
 func setPoints(wall):
 	if wall == "left":
 		points.Oponent += 1
@@ -33,7 +50,3 @@ func resetGame():
 	EventManager.emit_signal("setUp")
 	await get_tree().create_timer(1,5).timeout
 	ball.move()
-
-
-func _process(delta: float) -> void:
-	pass

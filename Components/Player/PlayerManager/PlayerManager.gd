@@ -18,8 +18,7 @@ func detectPlayer(target):
 	return player
 
 func _resetPlayers():
-	print("hol")
 	$Player.removePowerUp()
-	$Player.position = Vector2(20,540)
+	$Player.position = Vector2(40,540)
 	$Player2.removePowerUp()
 	$Player2.position = Vector2(1900,540)
