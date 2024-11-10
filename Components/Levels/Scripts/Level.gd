@@ -4,8 +4,8 @@ extends Node2D
 @onready var ball = $Ball
 @onready var Player = $PlayerManager/Player
 @onready var Oponent = $PlayerManager/Player
-@onready var PlayerScore = $Score/PlayerPoints
-@onready var OponentScore = $Score/OponentPoints
+@onready var PlayerScore = $UI/Score/PlayerPoints
+@onready var OponentScore = $UI/Score/OponentPoints
 var winner
 var musicChanged = false
 var points = { 
@@ -36,7 +36,6 @@ func switchMusic():
 	$Music.stop()
 	$BattleMusic.play()
 	musicChanged = true
-	
 func isGameOver():
 	if isPlayerWinner():
 		EventManager.emit_signal("notifyWinner","Player")

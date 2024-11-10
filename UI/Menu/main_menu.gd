@@ -17,3 +17,7 @@ func  _go_to_play() -> void:
 
 func _on_quiet_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_config_pressed() -> void:
+	get_tree().change_scene_to_file("res://UI/ConfigScreen/ConfigScreen.tscn")

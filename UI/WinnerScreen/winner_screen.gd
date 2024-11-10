@@ -9,3 +9,4 @@ func onGameOver(winner):
 	get_tree().paused = not get_tree().paused
 	$".".visible = true
 	$VBoxContainer/Label.text = winner + " wins."
+	$Music.play()

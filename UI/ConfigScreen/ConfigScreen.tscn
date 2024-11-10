@@ -1,4 +1,10 @@
-[gd_scene format=3 uid="uid://y2yuq4lpjm0i"]
+[gd_scene load_steps=6 format=3 uid="uid://y2yuq4lpjm0i"]
+
+[ext_resource type="Script" path="res://UI/ConfigScreen/config_screen.gd" id="1_keawb"]
+[ext_resource type="Texture2D" uid="uid://bghbmdf0gjbjr" path="res://UI/ConfigScreen/Assets/Config.jpeg" id="1_s42nh"]
+[ext_resource type="AudioStream" uid="uid://cj4tnewpi0rer" path="res://UI/PauseMenu/Assets/OutThere.ogg" id="2_6j7dp"]
+[ext_resource type="FontFile" uid="uid://dumwlquk1a56x" path="res://UI/Menu/Assets/Gameplay.ttf" id="3_ivhqx"]
+[ext_resource type="PackedScene" uid="uid://cbls3km4lj1je" path="res://UI/MainMenuButton/MainMenuButton.tscn" id="4_duk1u"]
 
 [node name="ConfigScreen" type="Control"]
 layout_mode = 3
@@ -7,3 +13,48 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_keawb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(976, 545.5)
+scale = Vector2(1.08929, 1.07324)
+texture = ExtResource("1_s42nh")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_6j7dp")
+autoplay = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -233.0
+offset_top = 96.0
+offset_right = 282.0
+offset_bottom = 188.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ivhqx")
+theme_override_font_sizes/font_size = 50
+text = "Points to win: "
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ivhqx")
+text = "10 "
+alignment = 1
+clear_button_enabled = true
+
+[node name="Button" parent="VBoxContainer" instance=ExtResource("4_duk1u")]
+layout_mode = 2
+
+[connection signal="text_submitted" from="VBoxContainer/HBoxContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]

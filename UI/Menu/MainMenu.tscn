@@ -48,7 +48,12 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("3_uqeqw")
 text = "Play vs friend"
 
-[node name="Quiet" type="Button" parent="VBoxContainer"]
+[node name="Config" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_uqeqw")
+text = "Configuration"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_uqeqw")
 text = "Quit"
@@ -59,4 +64,5 @@ autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Level" to="." method="_on_level_pressed"]
 [connection signal="pressed" from="VBoxContainer/LevelFriend" to="." method="_on_level_friend_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quiet" to="." method="_on_quiet_pressed"]
+[connection signal="pressed" from="VBoxContainer/Config" to="." method="_on_config_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_quiet_pressed"]
