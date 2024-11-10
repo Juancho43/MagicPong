@@ -1,7 +1,6 @@
 class_name Item
 extends Area2D
 
-
 var target
 var effect = {
 	"speed": 0,
@@ -9,10 +8,8 @@ var effect = {
 }
 
 func _ready() -> void:
-	add_to_group("items")
 	position = calculatePosition()
 	spawnSound()
-
 
 func spawnSound():
 	$SpawnSound.play()

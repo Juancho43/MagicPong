@@ -22,10 +22,11 @@ texture = ExtResource("1_vms63")
 
 [node name="SpawnSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_cfc17")
-volume_db = 2.255
+volume_db = 5.0
 
 [node name="DestroySound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_g4qfv")
+volume_db = 5.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

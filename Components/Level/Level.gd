@@ -6,6 +6,7 @@ extends Node2D
 @onready var Oponent = $PlayerManager/Player
 @onready var PlayerScore = $UI/Score/PlayerPoints
 @onready var OponentScore = $UI/Score/OponentPoints
+
 var winner
 var musicChanged = false
 var points = { 

@@ -33,7 +33,7 @@ window/stretch/aspect="expand"
 folder_colors={
 "res://Components/": "red",
 "res://Components/Items/": "orange",
-"res://Components/Levels/": "yellow",
+"res://Components/Level/": "yellow",
 "res://Components/Player/": "red",
 "res://Config/": "orange",
 "res://UI/": "green"

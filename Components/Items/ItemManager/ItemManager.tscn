@@ -14,7 +14,7 @@ position = Vector2(962.5, 539)
 shape = SubResource("RectangleShape2D_ipt8v")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 5.0
 autostart = true
 
 [node name="ItemFactory" type="Node" parent="."]

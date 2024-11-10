@@ -38,11 +38,6 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Level" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_uqeqw")
-text = "Play vs computer"
-
 [node name="LevelFriend" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_uqeqw")
@@ -62,7 +57,6 @@ text = "Quit"
 stream = ExtResource("2_mhu4y")
 autoplay = true
 
-[connection signal="pressed" from="VBoxContainer/Level" to="." method="_on_level_pressed"]
 [connection signal="pressed" from="VBoxContainer/LevelFriend" to="." method="_on_level_friend_pressed"]
 [connection signal="pressed" from="VBoxContainer/Config" to="." method="_on_config_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_quiet_pressed"]
