@@ -28,3 +28,4 @@ volume_db = 2.255
 stream = ExtResource("3_g4qfv")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

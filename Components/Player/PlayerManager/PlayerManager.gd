@@ -2,14 +2,12 @@ class_name PlayerManager
 extends Node2D
 
 func _ready() -> void:
-	EventManager.connect("itemDestroy",	Callable(self, "_on_ItemDestroy")
-)
-	
-	
-func _on_ItemDestroy(Item):
+	EventManager.connect("itemDestroy",	Callable(self, "_applyPowerUP"))
+	EventManager.connect("setUp",	Callable(self, "_resetPlayers"))
+
+func _applyPowerUP(Item):
 	detectPlayer(Item.target).speed = Item.effect.speed
 	detectPlayer(Item.target).horizontalMovement = Item.effect.horizontal
-	print("ME ROMPIESTE HDP D:")
 
 func detectPlayer(target):
 	var player
@@ -19,7 +17,9 @@ func detectPlayer(target):
 		player = $Player
 	return player
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _resetPlayers():
+	print("hol")
+	$Player.removePowerUp()
+	$Player.position = Vector2(20,540)
+	$Player2.removePowerUp()
+	$Player2.position = Vector2(1900,540)

@@ -1,28 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://cinnliea2yhvt"]
+[gd_scene load_steps=4 format=3 uid="uid://cinnliea2yhvt"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vwo0f"]
-size = Vector2(40, 1080)
+[ext_resource type="Script" path="res://Components/Walls/walls.gd" id="1_joulq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7fs14"]
 size = Vector2(1927, 50)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vwo0f"]
+size = Vector2(40, 1080)
+
 [node name="Walls" type="Node2D"]
-
-[node name="RightWall" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
-position = Vector2(1960, 555)
-shape = SubResource("RectangleShape2D_vwo0f")
-
-[node name="LeftWall" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
-position = Vector2(-20, 541)
-shape = SubResource("RectangleShape2D_vwo0f")
+script = ExtResource("1_joulq")
 
 [node name="DownWall" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DownWall"]
+position = Vector2(967.5, 1108)
+shape = SubResource("RectangleShape2D_7fs14")
+
+[node name="DownWall" type="StaticBody2D" parent="DownWall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DownWall/DownWall"]
 position = Vector2(967.5, 1108)
 shape = SubResource("RectangleShape2D_7fs14")
 
@@ -31,3 +28,18 @@ shape = SubResource("RectangleShape2D_7fs14")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SuperiorWall"]
 position = Vector2(960, -25)
 shape = SubResource("RectangleShape2D_7fs14")
+
+[node name="RightWall" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2(1944, 545)
+shape = SubResource("RectangleShape2D_vwo0f")
+
+[node name="LeftWall" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2(-20, 541)
+shape = SubResource("RectangleShape2D_vwo0f")
+
+[connection signal="body_entered" from="RightWall" to="." method="_on_right_wall_body_entered"]
+[connection signal="body_entered" from="LeftWall" to="." method="_on_left_wall_body_entered"]

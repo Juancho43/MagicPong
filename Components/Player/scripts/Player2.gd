@@ -1,12 +1,6 @@
-class_name player2
+class_name Player2
 extends paddle
 
-
-func _physics_process(delta: float) -> void:
-	direction = Vector2.ZERO
-	userInput()
-	var collision = move_and_collide(direction * speed * delta)
-	
 		
 func userInput():
 	if Input.is_action_pressed("player2_up"):

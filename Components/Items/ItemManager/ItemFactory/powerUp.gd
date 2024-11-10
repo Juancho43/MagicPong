@@ -1,26 +1,34 @@
-var powersUp = {
-	"FasterHorizontalSpeed": {
-		horizontal = true,
-		speed = 700	
+var speed = {
+	1 : 100,
+	2 : 400,
+	3 : 700
+}
+
+var horizontal = {
+	1 : true,
+	2 : false
+}
+
+var size = {
+	1:{
+		"x":10,
+		"y":80
 	},
-	"NormalHorizontalSpeed": {
-		horizontal = true,
-		speed = 400	
+	2:{
+		"x":20,
+		"y":80
 	},
-	"SlowHorizontalSpeed": {
-		horizontal = true,
-		speed = 100	
+	3:{
+		"x":10,
+		"y":160
 	},
-	"FasterSpeed": {
-		horizontal = false,
-		speed = 700	
+	4:{
+		"x":20,
+		"y":160
 	},
-	"NormalSpeed": {
-		horizontal = false,
-		speed = 400	
-	},
-	"SlowSpeed": {
-		horizontal = false,
-		speed = 100	
-	}
+}
+
+var target ={
+	"1" : "Player",
+	"2" : "Oponent"
 }
