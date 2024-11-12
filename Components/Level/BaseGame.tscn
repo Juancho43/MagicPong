@@ -23,6 +23,7 @@ texture = ExtResource("2_e2dks")
 [node name="BattleMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_nxdo0")
 volume_db = -6.0
+playback_type = 1
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_da4ls")
